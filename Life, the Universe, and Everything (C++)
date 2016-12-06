@@ -1,0 +1,35 @@
+// http://www.spoj.com/problems/TEST/
+
+#include <iostream>
+#include <limits>
+using namespace std;
+
+int validate;
+int input;
+
+void validation(){
+  while(true){
+    cin >> validate;
+    if(cin.fail()){
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      cout << "Please enter an integer: ";
+    }else{
+      break;
+    }
+  }
+}
+
+int main(){
+  while(true){
+    cout << "Please enter the meaning of life: ";
+    validation();
+    input = validate;
+    if(input == 42){
+      cout << "You have entered the meaning of life.";
+      break;
+    }else{
+      cout << input << " is not the meaning of life." << endl;
+    }
+  }
+}
